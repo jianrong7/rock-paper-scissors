@@ -7,32 +7,58 @@ function computerPlay() {
     return play
 }
 function playRound(playerSelection, computerSelection) {
+    let yourChoice = document.getElementById("yourChoice");
+    let computerChoice = document.getElementById("computerChoice");
     switch (playerSelection) {
         case "rock":
+            yourChoice.innerText = "Rock";
+            yourChoice.style.color = "#7d3131"
           switch (computerSelection) {
               case "Rock":
+                computerChoice.innerText = "Rock";
+                computerChoice.style.color = "#7d3131"
                 return "tie";
               case "Scissors":
+                computerChoice.innerText = "Scissors";
+                computerChoice.style.color = "#31777d"
                 return "win";
               case "Paper":
+                computerChoice.innerText = "Paper";
+                computerChoice.style.color = "#5b276b"
                 return "lose";
           }
         case "scissors":
+            yourChoice.innerText = "Scissors";
+            yourChoice.style.color = "#31777d"
           switch (computerSelection) {
               case "Rock":
+                computerChoice.innerText = "Rock";
+                computerChoice.style.color = "#7d3131"
                 return "lose";
               case "Scissors":
+                computerChoice.innerText = "Scissors";
+                computerChoice.style.color = "#31777d"
                 return "tie";
               case "Paper":
+                computerChoice.innerText = "Paper";
+                computerChoice.style.color = "#5b276b"
                 return "win";
           }
         case "paper":
+            yourChoice.innerText = "Paper";
+            yourChoice.style.color = "#5b276b"
           switch (computerSelection) {
               case "Rock":
+                computerChoice.innerText = "Rock";
+                computerChoice.style.color = "#7d3131"
                 return "win";
               case "Scissors":
+                computerChoice.innerText = "Scissors";
+                computerChoice.style.color = "#31777d"
                 return "lose";
               case "Paper":
+                computerChoice.innerText = "Paper";
+                computerChoice.style.color = "#5b276b"
                 return "tie";
           }
   }
@@ -44,19 +70,16 @@ function game(e) {
     let results = document.getElementById("results");
     if (result == "lose") {
       let message = `You lose! ${computerSelection} beats ${capitalizeFirstLetter(user_in)}`
-      console.log(message);
       results.innerHTML = message + "<br>";
       computerScore++;
     }
     else if (result == "win") {
       let message = `You win! ${capitalizeFirstLetter(user_in)} beats ${computerSelection}`
-      console.log(message);
       results.innerHTML = message + "<br>";
       yourScore++;
     }
     else {
       let message = `No one wins. You both chose ${computerSelection}`
-      console.log(message);
       results.innerHTML = message + "<br>";
     }
     determineWinner();
@@ -70,10 +93,14 @@ function determineWinner() {
   if (yourScore == 5) {
     let message = "congrats winner"
     winner.innerHTML += message + "<br>";
+    yourScore = 0;
+    computerScore = 0;
   }
   else if (computerScore == 5) {
     let message = "try again loser"
     winner.innerHTML += message + "<br>";
+    yourScore = 0;
+    computerScore = 0;
   }
   else {
     return true;
