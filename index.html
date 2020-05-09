@@ -1,90 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>Rock Paper Scissors</title>
   <meta charset="UTF-8"/>
+  <link href='styles.css' rel='stylesheet'>
+  <script src="script.js" defer></script>
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 </head>
 <body>
-  <script>
-      function capitalizeFirstLetter(string) {
-          return string.charAt(0).toUpperCase() + string.slice(1);
-      }
-      function computerPlay() {
-          let plays = Array('Rock', 'Paper', 'Scissors')
-          let play = plays[Math.floor(Math.random() * plays.length)];
-          return play
-      }
-      function playRound(playerSelection, computerSelection) {
-          let playerSelectionlower = playerSelection.toLowerCase()
-          switch (playerSelectionlower) {
-              case "rock":
-                switch (computerSelection) {
-                    case "Rock":
-                      return "tie";
-                    case "Scissors":
-                      return "win";
-                    case "Paper":
-                      return "lose";
-                }
-              case "scissors":
-                switch (computerSelection) {
-                    case "Rock":
-                      return "lose";
-                    case "Scissors":
-                      return "tie";
-                    case "Paper":
-                      return "win";
-                }
-              case "paper":
-                switch (computerSelection) {
-                    case "Rock":
-                      return "win";
-                    case "Scissors":
-                      return "lose";
-                    case "Paper":
-                      return "tie";
-                }
-        }
-      }
-      function game() {
-          let options = ['rock', 'paper', 'scissors'];
-          let user_in;
-          let computerScore = 0;
-          let yourScore = 0;
-          for (i = 0; i < 5; i++) {
-              let computerSelection = computerPlay();
-              while(true){
-                user_in = prompt("Please enter Rock, Paper, or Scissors:");
-                if(options.indexOf(user_in.toLowerCase()) == -1) {
-                    alert("Sorry that is incorrect, try again.");
-                    continue;
-                } else {
-                break;
-                }
-              }
-              let result = playRound(user_in, computerSelection);
-              if (result == "lose") {
-                  computerScore++;
-                  alert(`You lose! ${computerSelection} beats ${capitalizeFirstLetter(user_in)}`);
-              }
-              else if (result == "win") {
-                  yourScore++;
-                  alert(`You win! ${capitalizeFirstLetter(user_in)} beats ${computerSelection}`);
-              }
-              else {
-                  alert(`No one wins. You both chose ${computerSelection}`);
-              }
-          }
-          if (yourScore > computerScore) {
-              alert(`You have won. You have ${yourScore} points as compared to ${computerScore}`);
-          }
-          else if (computerScore > yourScore) {
-              alert(`You lost. You have ${yourScore} points as compared to ${computerScore}`);
-          }
-          else {
-              alert(`You tied with ${yourScore} points.`)
-          }
-      }
-  </script>
+  <header>
+    <h1>Rock Paper Scissors</h1>
+    <h3>by kynki7</h3>
+  </header>
+  <p>First to five!</p>
+  <div class="containerResults">
+    <div id="you">YOU</div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div id="computer">COMPUTER</div>
+    <div id="yourScore" class="counter">0</div>
+    <div></div>
+    <div id="results"></div>
+    <div></div>
+    <div id="computerScore" class="counter">0</div>
+    <div id="yourChoice">Your Choice</div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div id="computerChoice">Their Choice</div>
+  </div>
+  <div id="winner"></div>
+  <div class="containerChoice">
+    <button id="rock" class="choice">Rock</button>
+    <button id="paper" class="choice">Paper</button>
+    <button id="scissors" class="choice">Scissors</button>
+  </div>
 </body>
 </html>
