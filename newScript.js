@@ -7,7 +7,7 @@ function computerPlay() {
     let image = document.querySelector(".computerChoiceImage")
     let number = getRandomInt(0, 2)
     if (number == 0) {
-        image.innerHTML = '<img src="assets/rock.jpg" alt="rock" style="width: 100px;"></img>'
+        image.innerHTML = '<img src="assets/rock.jpg" alt="rock" style="width: 90px;"></img>'
         return "rock"
     } else if (number == 1) {
         image.innerHTML = '<img src="assets/paper.jpg" alt="paper" style="width: 90px;"></img>'
@@ -77,6 +77,8 @@ function game() {
     let computerScore = 0
     let playerScoreHTML = document.querySelector('.pScore')
     let computerScoreHTML = document.querySelector('.cSore')
+    let gameOutputBox = document.querySelector('.gameOutput')
+
     choices.forEach((choice) => {
         choice.addEventListener('click', () => {
             if (choice.classList.contains('rock')) {
@@ -92,13 +94,16 @@ function game() {
             if (result == "player wins") {
                 playerScore++
                 playerScoreHTML.innerHTML = playerScore
+                gameOutputBox.style.borderColor = "#2f6b26"
                 console.log(playerScore, computerScore)
             } else if (result == "computer wins") {
                 computerScore++
                 computerScoreHTML.innerHTML = computerScore
+                gameOutputBox.style.borderColor = "#ac393"
                 console.log(playerScore, computerScore)
             } else {
                 console.log(playerScore, computerScore)
+                gameOutputBox.style.borderColor = "#2F2D2E"
             }
             
             let finalResult = determineWinner(playerScore, computerScore)

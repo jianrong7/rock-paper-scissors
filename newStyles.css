@@ -112,12 +112,27 @@ header {
     bottom: 0;
     width: 100%;
     text-align: center;
-    border-top: 3px solid #2F2D2E;
+    border-top: 6px solid #2F2D2E;
     padding: 10px;
     font-size: 15px;
     text-decoration: none;
+    font-size: 19px;
 }
 .footer a {
     text-decoration: none;
     color: #2F2D2E;
+}
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .choices {
+        width: 70%;
+    }
+    .gameOutput {
+        width: 70%;
+        height: 250px;
+    }
+    .playerScore, .computerChoice, .computerScore {
+        width: 100px;
+        text-align: center;
+    }
 }
