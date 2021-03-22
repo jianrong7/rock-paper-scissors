@@ -7,13 +7,13 @@ function computerPlay() {
     let image = document.querySelector(".computerChoiceImage")
     let number = getRandomInt(0, 2)
     if (number == 0) {
-        image.innerHTML = '<img src="assets/rock.jpg" alt="rock" id="rock"></img>'
+        image.innerHTML = '<img src="assets/rock.jpg" alt="rock" style="width: 100px;"></img>'
         return "rock"
     } else if (number == 1) {
-        image.innerHTML = '<img src="assets/paper.jpg" alt="paper" id="paper"></img>'
+        image.innerHTML = '<img src="assets/paper.jpg" alt="paper" style="width: 90px;"></img>'
         return "paper"
     } else {
-        image.innerHTML = '<img src="assets/scissors.jpg" alt="scissors" id="scissors"></img>'
+        image.innerHTML = '<img src="assets/scissors.jpg" alt="scissors" style="width: 90px;"></img>'
         return "scissors"
     }
 };

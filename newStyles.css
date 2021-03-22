@@ -52,7 +52,7 @@ header {
 .rock {
     margin-top: 20px;
 }
-.scissors {
+.scissors, .paper {
     margin-top: 10px;
 }
 .gameOutput {
@@ -76,7 +76,8 @@ header {
     display: flex;
     flex-flow: column wrap;
     align-items: center;
-    margin: 10px;
+    margin-top: 20px;
+    width: 200px;
 }
 .gameResult {
     text-align: center;
