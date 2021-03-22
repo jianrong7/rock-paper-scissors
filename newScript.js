@@ -6,10 +6,13 @@ function getRandomInt(min, max) {
 function computerPlay() {
     let number = getRandomInt(0, 2)
     if (number == 0) {
+        console.log("rock")
         return "rock"
     } else if (number == 1) {
+        console.log("paper")
         return "paper"
     } else {
+        console.log("scissors")
         return "scissors"
     }
 };
@@ -40,12 +43,26 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 }
-function game(playerSelection) {
+function determineWinner(playerScore, computerScore) {
+    if (playerScore > computerScore) {
+        return "you win"
+    } else if (computerScore > playerScore) {
+        return "you lose"
+    } else {
+        return "tie"
+    }
+}
+function getPlayerSelection() {
+    playerSelection = prompt("What's you choice?", "rock")
+    playerSelection = playerSelection.toLowerCase()
+    return playerSelection
+}
+function game() {
     let playerScore = 0;
     let computerScore = 0;
     let rounds = 0
     while (rounds < 5) {
-        let result = playRound(playerSelection, computerPlay())
+        let result = playRound(getPlayerSelection(), computerPlay())
         
         if (result == "player wins") {
             playerScore++
@@ -58,11 +75,6 @@ function game(playerSelection) {
         }
         console.log(playerScore, computerScore)
     }
-    if (playerScore > computerScore) {
-        return "you win"
-    } else if (computerScore > playerScore) {
-        return "you lose"
-    } else {
-        return "tie"
-    }
+    
+    return determineWinner(playerScore, computerScore)
 }
