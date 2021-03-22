@@ -22,20 +22,20 @@
   </header>
   <div class="choices">
     <div class="rock">
-      <img src="assets/rock.jpg" alt="rock" id="rock">
+      <img src="assets/rock.jpg" alt="rock" id="rock" class="choice rock">
     </div>
     <div class="paper">
-      <img src="assets/paper.jpg" alt="paper" id="paper">
+      <img src="assets/paper.jpg" alt="paper" id="paper" class="choice paper">
     </div>
     <div class="scissors">
-      <img src="assets/scissors.jpg" alt="scissors" id="scissors">
+      <img src="assets/scissors.jpg" alt="scissors" id="scissors" class="choice scissors">
     </div>
   </div>
   
   <div class="gameOutput">
     <div class="playerScore">
       <span>Your Score</span>
-      <span>0</span>
+      <span class="score pScore">0</span>
     </div>
     <div class="computerChoice">
       <span>Computer's Choice</span>
@@ -43,13 +43,15 @@
     </div>
     <div class="computerScore">
       <span>Computer Score</span>
-      <span>0</span>
+      <span class="score cSore">0</span>
     </div>
   </div>
 
   <div class="gameResult"></div>
 
-  <div class="restart"></div>
+  <div class="restart">
+    <button type="button" class="button">Restart the game!</button>
+  </div>
 
   <div class="footer">Created by <a href="https://github.com/jianrong7" target="_blank">jianrong7</a></div>
 </body>
