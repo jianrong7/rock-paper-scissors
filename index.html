@@ -3,39 +3,54 @@
 <head>
   <title>Rock Paper Scissors</title>
   <meta charset="UTF-8"/>
-  <link href='styles.css' rel='stylesheet'>
-  <!-- <script src="script.js" defer></script> -->
+  <link href='reset.css' rel='stylesheet'>
+  <link href='newStyles.css' rel='stylesheet'>
+  <!-- <link href='styles.css' rel='stylesheet'>
+  <script src="script.js" defer></script> -->
   <script src="newScript.js" defer></script>
-  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <h1>Rock Paper Scissors</h1>
-    <h3>by kynki7</h3>
+    <div class="title">
+      <span>Rock</span>
+      <span>Paper</span>
+      <span>Scissors</span>
+    </div>
+    <p>First to five!</p>
   </header>
-  <p>First to five!</p>
-  <div class="containerResults">
-    <div id="you">YOU</div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div id="computer">COMPUTER</div>
-    <div id="yourScore" class="counter">0</div>
-    <div></div>
-    <div id="results"></div>
-    <div></div>
-    <div id="computerScore" class="counter">0</div>
-    <div id="yourChoice">Your Choice</div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div id="computerChoice">Their Choice</div>
+  <div class="choices">
+    <div class="rock">
+      <img src="assets/rock.jpg" alt="rock" id="rock">
+    </div>
+    <div class="paper">
+      <img src="assets/paper.jpg" alt="paper" id="paper">
+    </div>
+    <div class="scissors">
+      <img src="assets/scissors.jpg" alt="scissors" id="scissors">
+    </div>
   </div>
-  <div id="winner"></div>
-  <div class="containerChoice">
-    <button id="rock" class="choice">Rock</button>
-    <button id="paper" class="choice">Paper</button>
-    <button id="scissors" class="choice">Scissors</button>
+  
+  <div class="gameOutput">
+    <div class="playerScore">
+      <span>Your Score</span>
+      <span>0</span>
+    </div>
+    <div class="computerChoice">
+      <span>Computer's Choice</span>
+      <div class="computerChoiceImage"></div>
+    </div>
+    <div class="computerScore">
+      <span>Computer Score</span>
+      <span>0</span>
+    </div>
   </div>
+
+  <div class="gameResult"></div>
+
+  <div class="restart"></div>
+
+  <div class="footer">Created by <a href="https://github.com/jianrong7" target="_blank">jianrong7</a></div>
 </body>
 </html>

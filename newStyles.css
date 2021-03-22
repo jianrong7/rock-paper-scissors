@@ -1,0 +1,88 @@
+html {
+    background-color: #F3B15D;
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    color: #2F2D2E;
+}
+header {
+    text-align: center;
+    display: flex;
+    flex-flow: column wrap;
+    margin-top: 30px;
+}
+.title {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+.choices {
+    display: flex;
+    flex-flow: row wrap;
+    margin: auto;
+    width: 700px;
+    border: 4px solid #2F2D2E;
+    border-radius: 5px;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    padding: 30px;
+    margin-bottom: 10px;
+}
+#rock {
+    width: 100px;
+    transition: all .2s linear;
+}
+#rock:hover {
+    cursor: pointer;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+#paper, #scissors {
+    width: 90px;
+    transition: all .2s linear;
+}
+#paper:hover {
+    cursor: pointer;
+    /* -webkit-transform: scale(1.2); */
+    transform: scale(1.2);
+}
+#scissors:hover {
+    cursor: pointer;
+    /* -webkit-transform: scale(1.2); */
+    transform: scale(1.2);
+}
+.rock {
+    margin-top: 20px;
+}
+.scissors {
+    margin-top: 10px;
+}
+.gameOutput {
+    display: flex;
+    flex-flow: row wrap;
+    width: 760px;
+    margin: auto;
+    border: 4px solid #2F2D2E;
+    border-radius: 5px;
+    justify-content: space-evenly;
+}
+.playerScore, .computerChoice, .computerScore {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    margin: 10px;
+}
+/* Footer CSS */
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    border-top: 3px solid #2F2D2E;
+    padding: 10px;
+    font-size: 15px;
+    text-decoration: none;
+}
+.footer a {
+    text-decoration: none;
+    color: #2F2D2E;
+}
